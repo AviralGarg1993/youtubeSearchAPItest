@@ -7,8 +7,8 @@ function mvc() {
     },
     add : function(obj){
       var data = JSON.parse(localStorage.videos);
-			data.push(obj);
-			localStorage.videos = JSON.stringify(data);
+      data.push(obj);
+      localStorage.videos = JSON.stringify(data);
     },
     getAllVideos : function(){
       return JSON.parse(localStorage.videos);
@@ -34,9 +34,9 @@ function mvc() {
         image : vImage
       });
     },
-	  getVideos :function(){
-		  return model.getAllVideos();
-	  }
+    getVideos :function(){
+      return model.getAllVideos();
+    }
   };
   var  view = {
     init : function() {
