@@ -66,6 +66,7 @@ function mvc() {
             controller.addVideo(videoTitle, videoImage);
           })
         });
+        view.render();
       });
     },
     render : function(){
