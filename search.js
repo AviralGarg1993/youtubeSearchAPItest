@@ -40,6 +40,8 @@ function search() {
     response.items.forEach(function(video){
       videoTitle = video.snippet.title;
       videoImage = video.snippet.thumbnails.default.url;
+      console.log(videoTitle);
+      console.log(videoImage);
     })
   });
 }
