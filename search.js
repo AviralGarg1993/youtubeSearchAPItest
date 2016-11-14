@@ -6,7 +6,7 @@ function handleAPILoaded() {
   var model = {};
   var controller = {
     init : function(){
-      $(#result).html('<p>test</p>');
+      $('#result').html('<p>test</p>');
     }
   };
   var  view = {};
