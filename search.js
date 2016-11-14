@@ -76,9 +76,8 @@ function mvc() {
             '<span class="video-title">' + 
               video.title + 
             '</span><br>' +
-            '<span class="video-image">' + 
-              video.image; + 
-            '</span>' +
+            '<img class="video-image" src="' + video.image + '">' + 
+            '</img>' +
           '</li>' +
           '<li class="divider"></li>';
       });
