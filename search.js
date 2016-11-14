@@ -1,17 +1,21 @@
-// After the API loads, call a function to enable the search box.
-function handleAPILoaded() {
-  console.log("3");
-  $('#search-button').attr('disabled', false);
-  
+function mvc() {
   var model = {
     init : function() {
       console.log('4');
     }
   };
   var controller = {
+    setUpYoutubeAPI : function(){
+      console.log("3");
+      gapi.client.setApiKey("AIzaSyAV1MZol0Lh9yA1i9EKAWcuYLI3hjqLj3Y");
+      gapi.client.load("youtube", "v3", function() {
+        // yt api is ready
+        model.init();
+        view.init();  
+    },
     init : function(){
-      model.init();
-      view.init();
+      console.log("2");
+      controller.setUpYoutubeAPI(); 
     }
   };
   var  view = {
@@ -48,10 +52,5 @@ function search() {
 
 function init() {
   console.log("1");
-    gapi.client.setApiKey("AIzaSyAV1MZol0Lh9yA1i9EKAWcuYLI3hjqLj3Y");
-    gapi.client.load("youtube", "v3", function() {
-        // yt api is ready
-      console.log("2");
-      handleAPILoaded()
-    });
+  mvc();
 }
