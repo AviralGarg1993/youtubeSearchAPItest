@@ -11,7 +11,7 @@ function handleAPILoaded() {
   var controller = {
     init : function(){
       model.init();
-			view.init();
+      view.init();
     }
   };
   var  view = {
