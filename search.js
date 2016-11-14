@@ -34,8 +34,8 @@ function search() {
 
   request.execute(function(response) {
     console.log("execute");
+    console.log(response);
     var str = JSON.stringify(response.result);
-    console.log(str);
     $('#search-container').html('<pre>' + str + '</pre>');
   });
 }
