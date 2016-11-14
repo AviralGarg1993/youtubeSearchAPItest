@@ -24,7 +24,7 @@ function mvc() {
       console.log('5');
       $('#search-button').attr('disabled', false);
       console.log("6");
-      $('label').on("submit", function(e) {
+      $('form#searchForm').on("submit", function(e) {
         //To-do: localStorage.clear();
         //e.preventDefault();
         console.log("search");
