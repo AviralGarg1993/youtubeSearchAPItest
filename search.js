@@ -9,6 +9,9 @@ function mvc() {
       var data = JSON.parse(localStorage.videos);
 			data.push(obj);
 			localStorage.videos = JSON.stringify(data);
+    },
+    getAllVideos : function(){
+      return JSON.parse(localStorage.videos);
     }
   };
   var controller = {
@@ -30,7 +33,10 @@ function mvc() {
         title: vTitle,
         image : vImage
       });
-    }
+    },
+	  getVideos :function(){
+		  return model.getAllVideos();
+	  }
   };
   var  view = {
     init : function() {
@@ -61,6 +67,22 @@ function mvc() {
           })
         });
       });
+    },
+    render : function(){
+      var htmlString = '';
+      controller.getVideos().forEach(function(video){
+        htmlString +=
+          '<li class="video">' + 
+            '<span class="video-title">' + 
+              video.title + 
+            '</span><br>' +
+            '<span class="video-image">' + 
+              video.image; + 
+            '</span>' +
+          '</li>' +
+          '<li class="divider"></li>';
+      });
+      $('#videos').html(htmlStr);
     }
   };
   
