@@ -5,7 +5,7 @@ function handleAPILoaded() {
   
   var model = {
     init : function() {
-      console.log('1');
+      console.log('3');
     }
   };
   var controller = {
@@ -16,7 +16,7 @@ function handleAPILoaded() {
   };
   var  view = {
     init : function() {
-      console.log('2');
+      console.log('4');
     }
   };
   
@@ -35,16 +35,17 @@ function search() {
   request.execute(function(response) {
     console.log("execute");
     var str = JSON.stringify(response.result);
+    console.log(str);
     $('#search-container').html('<pre>' + str + '</pre>');
   });
 }
 
 function init() {
-  console.log("init");
+  console.log("1");
     gapi.client.setApiKey("AIzaSyAV1MZol0Lh9yA1i9EKAWcuYLI3hjqLj3Y");
     gapi.client.load("youtube", "v3", function() {
         // yt api is ready
-      console.log("load");
+      console.log("2");
       handleAPILoaded()
     });
 }
