@@ -44,7 +44,6 @@ function mvc() {
       $('#search-button').attr('disabled', false);
       console.log("6");
       $('form#searchForm').on("submit", function(e) {
-        //To-do: localStorage.clear();
         e.preventDefault();
         console.log("search");
         var q = $('#query').val();
@@ -92,5 +91,6 @@ function mvc() {
 
 function init() {
   console.log("1");
+  localStorage.clear();
   mvc();
 }
