@@ -83,7 +83,7 @@ function mvc() {
           '</li>' +
           '<li class="divider"></li>';
       });
-      $('#videos').html(htmlStr);
+      $('#videos').html(htmlString);
     }
   };
   
