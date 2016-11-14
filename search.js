@@ -24,8 +24,8 @@ function mvc() {
       console.log('5');
       $('#search-button').attr('disabled', false);
       $('#search-button').on("submit", function(e) {
-				//To-do: localStorage.clear();
-				e.preventDefault();
+        //To-do: localStorage.clear();
+        e.preventDefault();
         
         console.log("search");
         var q = $('#query').val();
@@ -46,7 +46,7 @@ function mvc() {
             console.log(videoImage);
           })
         });
-      };
+      });
     }
   };
   
