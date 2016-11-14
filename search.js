@@ -38,8 +38,8 @@ function search() {
     var str = JSON.stringify(response.result);
     $('#search-container').html('<pre>' + str + '</pre>');
     response.items.forEach(function(video){
-      console.log(video.snippet.title);
-      console.log(video.snippet.thumbnails.default.url);
+      videoTitle = video.snippet.title;
+      videoImage = video.snippet.thumbnails.default.url;
     })
   });
 }
