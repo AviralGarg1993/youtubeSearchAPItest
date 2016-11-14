@@ -3,13 +3,21 @@ function handleAPILoaded() {
   console.log("handleAPIloaded");
   $('#search-button').attr('disabled', false);
   
-  var model = {};
-  var controller = {
-    init : function(){
-      $('#result').html('<p>test</p>');
+  var model = {
+    init : function() {
+      console.log('1');
     }
   };
-  var  view = {};
+  var controller = {
+    init : function(){
+      model.init();
+			view.init();
+    }
+  };
+  var  view = {
+    init : function() {
+      console.log('2');
+    };
   
   controller.init();
 }
