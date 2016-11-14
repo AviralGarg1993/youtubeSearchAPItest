@@ -26,7 +26,7 @@ function mvc() {
       console.log("6");
       $('form#searchForm').on("submit", function(e) {
         //To-do: localStorage.clear();
-        //e.preventDefault();
+        e.preventDefault();
         console.log("search");
         var q = $('#query').val();
         var request = gapi.client.youtube.search.list({
