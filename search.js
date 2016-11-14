@@ -2,6 +2,13 @@ function mvc() {
   var model = {
     init : function() {
       console.log('4');
+      if (!localStorage.videos)
+        localStorage.videos = JSON.stringify([]);
+    },
+    add : function(obj){
+      var data = JSON.parse(localStorage.videos);
+			data.push(obj);
+			localStorage.videos = JSON.stringify(data);
     }
   };
   var controller = {
@@ -17,6 +24,12 @@ function mvc() {
     init : function(){
       console.log("2");
       controller.setUpYoutubeAPI(); 
+    },
+    addVideo : function(vTitle, vImage){
+      model.add({
+        title: vTitle,
+        image : vImage
+      });
     }
   };
   var  view = {
@@ -44,6 +57,7 @@ function mvc() {
             videoImage = video.snippet.thumbnails.default.url;
             console.log(videoTitle);
             console.log(videoImage);
+            controller.addVideo(videoTitle, videoImage);
           })
         });
       });
