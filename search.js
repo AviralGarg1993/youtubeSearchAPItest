@@ -11,7 +11,8 @@ function mvc() {
       gapi.client.load("youtube", "v3", function() {
         // yt api is ready
         model.init();
-        view.init();  
+        view.init();
+      });
     },
     init : function(){
       console.log("2");
