@@ -22,6 +22,7 @@ function mvc() {
   var  view = {
     init : function() {
       console.log('5');
+      $('#search-button').attr('disabled', false);
     }
   };
   
