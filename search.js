@@ -1,11 +1,11 @@
 // After the API loads, call a function to enable the search box.
 function handleAPILoaded() {
-  console.log("handleAPIloaded");
+  console.log("3");
   $('#search-button').attr('disabled', false);
   
   var model = {
     init : function() {
-      console.log('3');
+      console.log('4');
     }
   };
   var controller = {
@@ -16,7 +16,7 @@ function handleAPILoaded() {
   };
   var  view = {
     init : function() {
-      console.log('4');
+      console.log('5');
     }
   };
   
@@ -37,6 +37,9 @@ function search() {
     console.log(response);
     var str = JSON.stringify(response.result);
     $('#search-container').html('<pre>' + str + '</pre>');
+    response.items.forEach(function(video){
+      console.log(video);
+    })
   });
 }
 
