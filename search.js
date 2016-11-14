@@ -1,9 +1,12 @@
 function mvc() {
   var model = {
+    locaStorageReset : function() {
+      localStorage.videos = JSON.stringify([]);
+    },
     init : function() {
       console.log('4');
       if (!localStorage.videos)
-        localStorage.videos = JSON.stringify([]);
+        model.locaStorageReset();
     },
     add : function(obj){
       var data = JSON.parse(localStorage.videos);
@@ -90,6 +93,5 @@ function mvc() {
 
 function init() {
   console.log("1");
-  localStorage.clear();
   mvc();
 }
