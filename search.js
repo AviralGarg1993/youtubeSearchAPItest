@@ -17,7 +17,8 @@ function handleAPILoaded() {
   var  view = {
     init : function() {
       console.log('2');
-    };
+    }
+  };
   
   controller.init();
 }
