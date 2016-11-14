@@ -23,33 +23,34 @@ function mvc() {
     init : function() {
       console.log('5');
       $('#search-button').attr('disabled', false);
+      $('#search-button').on("submit", function(e) {
+				//To-do: localStorage.clear();
+				e.preventDefault();
+        
+        console.log("search");
+        var q = $('#query').val();
+        var request = gapi.client.youtube.search.list({
+          q: q,
+          part: 'snippet'
+        });
+    
+        request.execute(function(response) {
+          console.log("execute");
+          console.log(response);
+          var str = JSON.stringify(response.result);
+          $('#search-container').html('<pre>' + str + '</pre>');
+          response.items.forEach(function(video){
+            videoTitle = video.snippet.title;
+            videoImage = video.snippet.thumbnails.default.url;
+            console.log(videoTitle);
+            console.log(videoImage);
+          })
+        });
+      };
     }
   };
   
   controller.init();
-}
-
-// Search for a specified string.
-function search() {
-  console.log("search");
-  var q = $('#query').val();
-  var request = gapi.client.youtube.search.list({
-    q: q,
-    part: 'snippet'
-  });
-
-  request.execute(function(response) {
-    console.log("execute");
-    console.log(response);
-    var str = JSON.stringify(response.result);
-    $('#search-container').html('<pre>' + str + '</pre>');
-    response.items.forEach(function(video){
-      videoTitle = video.snippet.title;
-      videoImage = video.snippet.thumbnails.default.url;
-      console.log(videoTitle);
-      console.log(videoImage);
-    })
-  });
 }
 
 function init() {
