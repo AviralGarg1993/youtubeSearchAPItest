@@ -73,7 +73,7 @@ function mvc() {
       controller.getVideos().forEach(function(video){
         htmlString +=
           '<li class="video">' + 
-            '<span class="video-title">' + 
+            '<span class="video-title hideOverflow">' + 
               video.title + 
             '</span><br>' +
             '<img class="video-image" src="' + video.image + '">' + 
