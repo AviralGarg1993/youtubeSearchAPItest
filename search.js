@@ -1,12 +1,12 @@
 function mvc() {
   var model = {
-    locaStorageReset : function() {
+    localStorageReset : function() {
       localStorage.videos = JSON.stringify([]);
     },
     init : function() {
       console.log('4');
       if (!localStorage.videos)
-        model.locaStorageReset();
+        model.localStorageReset();
     },
     add : function(obj){
       var data = JSON.parse(localStorage.videos);
@@ -39,6 +39,9 @@ function mvc() {
     },
     getVideos :function(){
       return model.getAllVideos();
+    },
+    clearLocalStorage : function(){
+      model.localStorageReset();
     }
   };
   var  view = {
@@ -48,6 +51,7 @@ function mvc() {
       console.log("6");
       $('form#searchForm').on("submit", function(e) {
         e.preventDefault();
+        controller.clearLocalStorage();
         console.log("search");
         var q = $('#query').val();
         var request = gapi.client.youtube.search.list({
