@@ -25,8 +25,7 @@ function mvc() {
       $('#search-button').attr('disabled', false);
       $('#search-button').on("submit", function(e) {
         //To-do: localStorage.clear();
-        e.preventDefault();
-        
+        //e.preventDefault();
         console.log("search");
         var q = $('#query').val();
         var request = gapi.client.youtube.search.list({
