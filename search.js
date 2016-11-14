@@ -2,6 +2,16 @@
 function handleAPILoaded() {
   console.log("handleAPIloaded");
   $('#search-button').attr('disabled', false);
+  
+  var model = {};
+  var controller = {
+    init : function(){
+      document.body.html('<p>test</p>');
+    }
+  };
+  var  view = {};
+  
+  controller.init();
 }
 
 // Search for a specified string.
